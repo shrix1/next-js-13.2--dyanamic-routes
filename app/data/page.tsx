@@ -1,4 +1,4 @@
-import data from "./data.json";
+import data from "../api/hello/data.json";
 import Link from "next/link";
 
 const page = () => {
@@ -6,7 +6,7 @@ const page = () => {
     <>
       <h1>games with rating</h1>
 
-      <ul className="border border-sky-600 text-white p-5">
+      <ul className="border border-sky-600 text-white p-5 w-52">
         {data.map((value, idx) => {
           return (
             <li key={idx}>
@@ -17,6 +17,10 @@ const page = () => {
           );
         })}
       </ul>
+
+      <Link href="/" className="bg-sky-500 p-2 rounded-sm">
+        Home
+      </Link>
     </>
   );
 };
