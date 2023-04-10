@@ -8,6 +8,6 @@ export async function GET(request: Request) {
   const filterGame = data.filter((v) =>
     v.name.toLowerCase().includes(query.toLowerCase())
   );
-  console.log(filterGame, query);
+
   return NextResponse.json(filterGame);
 }
