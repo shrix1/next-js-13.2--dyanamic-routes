@@ -51,14 +51,17 @@ const page = ({ searchParams }: any) => {
         Home
       </Link>
 
-      {result &&
+      {result ? (
         result.map((ans: any, idx: number) => {
           return (
-            <div key={idx} className="text-white">
+            <div key={idx} className="text-white pt-10">
               {ans.name} {ans.rating}
             </div>
           );
-        })}
+        })
+      ) : (
+        <h1 className="text-sky-400 pt-10">nothing</h1>
+      )}
     </>
   );
 };
