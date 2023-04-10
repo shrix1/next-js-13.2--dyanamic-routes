@@ -3,9 +3,7 @@ import data from "../../api/hello/data.json";
 import Link from "next/link";
 
 const dynamicRouteName = ({ params }: any) => {
-  console.log(params);
   const filterName: any = data.filter((v) => v.name === params.name);
-  console.log(filterName);
   return (
     <>
       <div className="text-white flex flex-col p-5 border border-sky-500 w-[350px]">
