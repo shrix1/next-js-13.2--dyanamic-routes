@@ -2,7 +2,6 @@
 import { FormEvent, useState } from "react";
 import data from "../api/hello/data.json";
 import Link from "next/link";
-import { link } from "fs";
 
 const page = ({ searchParams }: any) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -12,11 +11,7 @@ const page = ({ searchParams }: any) => {
 
   const handleSearchQuery = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // const fetchData = await fetch(`/api/hello?search=${search}`);
-    const fetchData = await fetch(
-      `http://localhost:3000/api/hello?search=${search}`
-    );
+    const fetchData = await fetch(`/api/hello?search=${search}`);
     const res = await fetchData.json();
     setResult(res);
   };
