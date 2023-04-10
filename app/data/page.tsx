@@ -3,7 +3,7 @@ import { FormEvent, useState } from "react";
 import data from "../api/hello/data.json";
 import Link from "next/link";
 
-const page = ({ searchParams }: any) => {
+const page = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [search, setSearch] = useState<any>("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -18,7 +18,7 @@ const page = ({ searchParams }: any) => {
 
   return (
     <>
-      <h1 className="text-white">games with rating {searchParams.search}</h1>
+      <h1 className="text-white">games with rating </h1>
 
       <form onSubmit={handleSearchQuery}>
         <input
