@@ -18,6 +18,8 @@ const page = () => {
 
   return (
     <>
+      <h1 className="text-white">{"checking code here"}</h1>
+
       <h1 className="text-white">games with rating </h1>
 
       <form onSubmit={handleSearchQuery}>
