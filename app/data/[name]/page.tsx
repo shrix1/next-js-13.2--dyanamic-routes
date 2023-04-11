@@ -2,13 +2,17 @@ import React, { Suspense } from "react";
 import data from "../../api/hello/data.json";
 import Link from "next/link";
 
-export async function generateMetadata({ params }: any) {
+interface paramsType {
+  params: { name: string };
+}
+
+export async function generateMetadata({ params }: paramsType) {
   return {
     title: params.name,
   };
 }
 
-const dynamicRouteName = ({ params }: any) => {
+const dynamicRouteName = ({ params }: paramsType) => {
   const filterName: any = data.filter((v) => v.name === params.name);
 
   return (

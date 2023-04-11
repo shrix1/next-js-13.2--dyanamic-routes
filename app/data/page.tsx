@@ -3,11 +3,16 @@ import { FormEvent, useState } from "react";
 import data from "../api/hello/data.json";
 import Link from "next/link";
 
+interface resultType {
+  name?: string;
+  rating?: number;
+}
+
 const page = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [search, setSearch] = useState<any>("");
+  const [search, setSearch] = useState<string>("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [result, setResult] = useState<any>();
+  const [result, setResult] = useState<resultType[]>();
 
   const handleSearchQuery = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,7 +54,7 @@ const page = () => {
       </Link>
 
       {result ? (
-        result.map((ans: any, idx: number) => {
+        result.map((ans, idx) => {
           return (
             <div key={idx} className="text-white pt-10">
               {ans.name} {ans.rating}

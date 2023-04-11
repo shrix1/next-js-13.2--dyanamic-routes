@@ -4,10 +4,9 @@ import data from "./data.json";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const query: any = searchParams.get("search");
-  console.log(typeof query, query);
 
   type filterType = {
-    name?: string;
+    name: string;
     rating?: number;
   };
 
