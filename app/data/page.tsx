@@ -8,10 +8,8 @@ interface resultType {
   rating?: number;
 }
 
-const page = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+const Page = () => {
   const [search, setSearch] = useState<string>("");
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [result, setResult] = useState<resultType[]>();
 
   const handleSearchQuery = async (e: FormEvent<HTMLFormElement>) => {
@@ -68,4 +66,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
