@@ -1,5 +1,5 @@
 "use client";
-import { FormEvent, useState } from "react";
+import { FormEvent, Suspense, useState } from "react";
 import data from "../api/hello/data.json";
 import Link from "next/link";
 
