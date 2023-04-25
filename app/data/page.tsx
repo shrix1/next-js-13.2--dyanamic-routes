@@ -2,6 +2,7 @@
 import { FormEvent, Suspense, useState } from "react";
 import data from "../api/hello/data.json";
 import Link from "next/link";
+import SearchFetch from "../SearchFetch";
 
 interface resultType {
   name?: string;
@@ -10,7 +11,7 @@ interface resultType {
 
 const Page = () => {
   const [search, setSearch] = useState<string>("");
-  const [result, setResult] = useState<resultType[]>();
+  const [result, setResult] = useState();
 
   const handleSearchQuery = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,13 +26,27 @@ const Page = () => {
 
       <h1 className="text-white">games with rating </h1>
 
-      <form onSubmit={handleSearchQuery}>
-        <input
-          type="search"
-          placeholder="search her..."
-          className="border border-sky-500 p-3"
-          onChange={(e) => setSearch(e.target.value)}
-        />
+      <form onSubmit={handleSearchQuery} className="py-5 pl-2 flex gap-3">
+        <div className="relative ">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            onChange={(e) => setSearch(e.target.value)}
+            className="peer bg-transparent h-10 w-72  text-gray-200 placeholder-transparent 
+            ring-1 px-2 ring-sky-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+            placeholder="search here.."
+          />
+          <label
+            htmlFor="username"
+            className="absolute cursor-text left-0 -top-3 text-sm text-gray-500 
+            bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500
+             peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm 
+             transition-all peer-focus:bg-black"
+          >
+            Name
+          </label>
+        </div>
         <button className="border border-sky-500 p-2 text-white">submit</button>
       </form>
 
@@ -51,17 +66,7 @@ const Page = () => {
         Home
       </Link>
 
-      {result ? (
-        result.map((ans, idx) => {
-          return (
-            <div key={idx} className="text-white pt-10">
-              {ans.name} {ans.rating}
-            </div>
-          );
-        })
-      ) : (
-        <h1 className="text-sky-400 pt-10">nothing</h1>
-      )}
+      <SearchFetch result={result} />
     </>
   );
 };
