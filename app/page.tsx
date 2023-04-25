@@ -14,16 +14,16 @@ export default function Home() {
       </h1>
 
       <motion.div
-        layout
+        // layout
         className="w-[500px] flex flex-col gap-5 h-[600px] border-2 border-sky-500 rounded-lg text-white"
       >
         <motion.section
-          layout="position"
           className="flex flex-col "
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ layout: { duration: 1, type: "spring" } }}
-          exit={{ opacity: 0, y: -10 }}
+          layout="position"
+          // initial={{ opacity: 0, y: -10 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ layout: { duration: 1, type: "spring" } }}
+          // exit={{ opacity: 0, y: -10 }}
         >
           <div
             className="px-5 flex justify-between text-2xl"
@@ -41,12 +41,12 @@ export default function Home() {
               transition={{ duration: 1 }}
               // exit={{ opacity: 0, y: -10 }}
             >
-              <ul>
+              <div>
                 <li>one</li>
                 <li>one</li>
                 <li>one</li>
                 <li>one</li>
-              </ul>
+              </div>
             </motion.div>
           )}
           {/* </AnimatePresence> */}
@@ -56,10 +56,10 @@ export default function Home() {
         <motion.section
           layout="position"
           className="flex flex-col"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
+          // initial={{ opacity: 0, y: -10 }}
+          // animate={{ opacity: 1, y: 0 }}
           // transition={{ layout: { duration: 1, type: "inertia" } }}
-          exit={{ opacity: 0, y: -10 }}
+          // exit={{ opacity: 0, y: -10 }}
         >
           <div
             className="px-5 flex justify-between text-2xl"
