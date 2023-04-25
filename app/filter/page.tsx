@@ -5,6 +5,7 @@ import data from "../api/hello/data.json";
 const Page = () => {
   const [blogItems, setBlogItems] = useState(data);
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
+  console.log(blogItems);
 
   useEffect(() => {
     let filteredItems: any;
