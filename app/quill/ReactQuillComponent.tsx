@@ -1,7 +1,9 @@
 "use client"
 import dynamic from "next/dynamic"
-import React, { useState } from "react"
-const ReactQuill = dynamic(() => import("react-quill"))
+import React, { useEffect, useState } from "react"
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+})
 import "../../node_modules/react-quill/dist/quill.snow.css"
 
 const ReactQuillComponent = () => {
@@ -11,6 +13,13 @@ const ReactQuillComponent = () => {
     console.log(e)
     setQuill(e)
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Accessing the document object is safe only on the client-side
+      console.log(document)
+    }
+  }, [])
 
   return (
     <div className=" rounded-lg">

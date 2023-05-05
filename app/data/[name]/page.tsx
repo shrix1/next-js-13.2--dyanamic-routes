@@ -37,3 +37,11 @@ const dynamicRouteName = async ({ params }: paramsType) => {
 }
 
 export default dynamicRouteName
+
+export async function generateStaticParams() {
+  const posts = data
+
+  return posts.map((post: any) => ({
+    title: post.name,
+  }))
+}
