@@ -1,23 +1,23 @@
-import React, { Suspense } from "react";
-import data from "../../api/hello/data.json";
-import Link from "next/link";
+import React, { Suspense } from "react"
+import data from "../../api/hello/data.json"
+import Link from "next/link"
 
 interface paramsType {
-  params: { name: string };
+  params: { name: string }
 }
 
 export async function generateMetadata({ params }: paramsType) {
   return {
     title: params.name,
-  };
+  }
 }
 
 async function check() {
-  return data.filter((v) => v.name === "cs");
+  return data.filter((v) => v.name === "cs")
 }
 
 const dynamicRouteName = async ({ params }: paramsType) => {
-  let filterName: any = await check();
+  let filterName: any = await check()
 
   return (
     <>
@@ -33,7 +33,7 @@ const dynamicRouteName = async ({ params }: paramsType) => {
         </Link>
       </Suspense>
     </>
-  );
-};
+  )
+}
 
-export default dynamicRouteName;
+export default dynamicRouteName
