@@ -1,24 +1,24 @@
-"use client";
-import { FormEvent, Suspense, useState } from "react";
-import data from "../api/hello/data.json";
-import Link from "next/link";
-import SearchFetch from "../SearchFetch";
+"use client"
+import { FormEvent, Suspense, useState } from "react"
+import data from "../api/hello/data.json"
+import Link from "next/link"
+import SearchFetch from "../SearchFetch"
 
 interface resultType {
-  name?: string;
-  rating?: number;
+  name?: string
+  rating?: number
 }
 
 const Page = () => {
-  const [search, setSearch] = useState<string>("");
-  const [result, setResult] = useState();
+  const [search, setSearch] = useState<string>("")
+  const [result, setResult] = useState()
 
   const handleSearchQuery = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const fetchData = await fetch(`/api/hello?search=${search}`);
-    const res = await fetchData.json();
-    setResult(res);
-  };
+    e.preventDefault()
+    const fetchData = await fetch(`/api/hello?search=${search}`)
+    const res = await fetchData.json()
+    setResult(res)
+  }
 
   return (
     <>
@@ -58,7 +58,7 @@ const Page = () => {
                 {value.name} | {value.rating}
               </Link>
             </li>
-          );
+          )
         })}
       </ul>
 
@@ -68,7 +68,7 @@ const Page = () => {
 
       <SearchFetch result={result} />
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

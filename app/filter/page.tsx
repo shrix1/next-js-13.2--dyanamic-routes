@@ -1,46 +1,46 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import data from "../api/hello/data.json";
+"use client"
+import React, { useEffect, useState } from "react"
+import data from "../api/hello/data.json"
 
 const Page = () => {
-  const [blogItems, setBlogItems] = useState(data);
-  const [selectedFilter, setSelectedFilter] = useState<string>("all");
-  console.log(blogItems);
+  const [blogItems, setBlogItems] = useState(data)
+  const [selectedFilter, setSelectedFilter] = useState<string>("all")
+  console.log(blogItems)
 
   useEffect(() => {
-    let filteredItems: any;
+    let filteredItems: any
 
     switch (selectedFilter) {
       case "all":
-        filteredItems = data;
-        break;
+        filteredItems = data
+        break
       case "br":
-        filteredItems = data.filter((d) => d.catorgory === "br");
-        break;
+        filteredItems = data.filter((d) => d.catorgory === "br")
+        break
       case "comp":
-        filteredItems = data.filter((d) => d.catorgory === "comp");
-        break;
+        filteredItems = data.filter((d) => d.catorgory === "comp")
+        break
       case "fun":
-        filteredItems = data.filter((d) => d.catorgory === "fun");
-        break;
+        filteredItems = data.filter((d) => d.catorgory === "fun")
+        break
       case "9":
-        filteredItems = blogItems.filter((d) => d.rating === 9);
-        break;
+        filteredItems = blogItems.filter((d) => d.rating === 9)
+        break
       case "8.5":
-        filteredItems = blogItems.filter((d) => d.rating === 8.5);
-        break;
+        filteredItems = blogItems.filter((d) => d.rating === 8.5)
+        break
       case "8":
-        filteredItems = blogItems.filter((d) => d.rating === 8);
-        break;
+        filteredItems = blogItems.filter((d) => d.rating === 8)
+        break
       default:
-        filteredItems = data;
+        filteredItems = data
     }
 
-    setBlogItems(filteredItems);
-  }, [selectedFilter]);
+    setBlogItems(filteredItems)
+  }, [blogItems, selectedFilter])
 
   function handleFilterChange(e: any) {
-    setSelectedFilter(e.target.value);
+    setSelectedFilter(e.target.value)
   }
 
   return (
@@ -140,12 +140,12 @@ const Page = () => {
                 <h1>{d.rating}</h1>
                 <h1>{d.catorgory}</h1>
               </div>
-            );
+            )
           })}
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

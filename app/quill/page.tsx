@@ -1,7 +1,8 @@
-import ReactQuillComponent from "./ReactQuillComponent";
+import dynamic from "next/dynamic"
+const ReactQuillComponent = dynamic(() => import("./ReactQuillComponent"))
 
 const page = () => {
-  return <ReactQuillComponent />;
-};
+  return <ReactQuillComponent />
+}
 
-export default page;
+export default page

@@ -1,15 +1,16 @@
-"use client";
-import React, { useRef, useEffect, useState } from "react";
-import ReactQuill from "react-quill";
-import "../../node_modules/react-quill/dist/quill.snow.css";
+"use client"
+import dynamic from "next/dynamic"
+import React, { useState } from "react"
+const ReactQuill = dynamic(() => import("react-quill"))
+import "../../node_modules/react-quill/dist/quill.snow.css"
 
 const ReactQuillComponent = () => {
-  const [quill, setQuill] = useState<any>();
+  const [quill, setQuill] = useState<any>()
 
   const handle = (e: any) => {
-    console.log(e);
-    setQuill(e);
-  };
+    console.log(e)
+    setQuill(e)
+  }
 
   return (
     <div className=" rounded-lg">
@@ -24,18 +25,8 @@ const ReactQuillComponent = () => {
         className="bg-white p-5 list-outside list-disc ml-2 marker:text-sky-400 list-item "
         dangerouslySetInnerHTML={{ __html: quill }}
       ></div>
-
-      <ul className="bg-gray-700 p-10 rounded-md list-outside list-disc marker:text-sky-400 ">
-        <li>sasasasa</li>
-        <li>sasasasa</li>
-        <li>sasasasa</li>
-        <li>sasasasa</li>
-        <li>sasasasa</li>
-        <li>sasasasa</li>
-        <li>sasasasa</li>
-      </ul>
     </div>
-  );
-};
+  )
+}
 
-export default ReactQuillComponent;
+export default ReactQuillComponent

@@ -1,11 +1,11 @@
-"use client";
-import Link from "next/link";
-import { useState, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+"use client"
+import Link from "next/link"
+import { useState, useRef } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
 export default function Home() {
-  const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
+  const [show, setShow] = useState(false)
+  const [show1, setShow1] = useState(false)
 
   return (
     <main>
@@ -87,5 +87,5 @@ export default function Home() {
         </motion.section>
       </motion.div>
     </main>
-  );
+  )
 }

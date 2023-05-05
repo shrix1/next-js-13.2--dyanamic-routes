@@ -1,4 +1,4 @@
-import React, { ReactElement, Suspense } from "react";
+import React, { ReactElement, Suspense } from "react"
 
 const SearchFetch = ({ result }: any) => {
   //   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -12,14 +12,14 @@ const SearchFetch = ({ result }: any) => {
               <div key={idx} className="text-white pt-10">
                 {ans.name} {ans.rating}
               </div>
-            );
+            )
           })
         ) : (
           <h1 className="text-sky-400 pt-10 text-xl">nothing</h1>
         )}
       </div>
     </Suspense>
-  );
-};
+  )
+}
 
-export default SearchFetch;
+export default SearchFetch
