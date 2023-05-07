@@ -7,7 +7,7 @@ interface gamesType {
   catorgory: string
 }
 async function getGames() {
-  const data = await fetch("http://localhost:3000/api/game")
+  const data = await fetch("api/game")
   return data.json()
 }
 

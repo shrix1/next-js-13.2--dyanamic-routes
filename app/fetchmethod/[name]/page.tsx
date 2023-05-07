@@ -31,7 +31,7 @@ export default page
 
 export async function generateStaticParams() {
   async function getGames() {
-    const data = await fetch("http://localhost:3000/api/game")
+    const data = await fetch("/api/game")
     const res = await data.json()
     return res
   }
