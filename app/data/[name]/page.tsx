@@ -12,12 +12,8 @@ export async function generateMetadata({ params }: paramsType) {
   }
 }
 
-async function check() {
-  return data.filter((v) => v.name === "cs")
-}
-
 const dynamicRouteName = async ({ params }: paramsType) => {
-  let filterName: any = await check()
+  let filterName: any = data.filter((v) => v.name === params.name)
 
   return (
     <>
@@ -37,11 +33,3 @@ const dynamicRouteName = async ({ params }: paramsType) => {
 }
 
 export default dynamicRouteName
-
-export async function generateStaticParams() {
-  const posts = data
-
-  return posts.map((post: any) => ({
-    title: post.name,
-  }))
-}

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "valorant",
+    "rating": 9,
+    "catorgory": "comp"
+  },
+  {
+    "name": "apex",
+    "rating": 8,
+    "catorgory": "br"
+  },
+  {
+    "name": "fallguys",
+    "rating": 8.5,
+    "catorgory": "fun"
+  },
+  {
+    "name": "cs",
+    "rating": 9,
+    "catorgory": "comp"
+  },
+  {
+    "name": "cs2",
+    "rating": 8.5,
+    "catorgory": "comp"
+  }
+]

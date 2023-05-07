@@ -10,7 +10,11 @@ export default function Home() {
   return (
     <main>
       <h1 className="text-2xl text-sky-500 text-center">
-        <Link href="/data">dynamicRout</Link>
+        <Link href="/data">Data search and dyn route </Link>
+        <br />
+        <Link href="/fetchmethod">PLAY FETCH</Link>
+        <br />
+        <Link href="/filter">filter</Link>
       </h1>
 
       <motion.div

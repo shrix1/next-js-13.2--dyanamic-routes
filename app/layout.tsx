@@ -21,8 +21,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable}`}>
-      <body className="bg-black font-pop">
-        <h1 className=" text-white ">global layout placeholder</h1>
+      <body className="bg-black font-pop text-white">
+        <h1 className=" text-white ">STAY CURIOUS AND LEARN</h1>
         {children}
       </body>
     </html>
