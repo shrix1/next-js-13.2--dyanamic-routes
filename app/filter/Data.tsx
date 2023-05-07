@@ -7,7 +7,9 @@ interface gamesType {
   catorgory: string
 }
 async function getGames() {
-  const data = await fetch("api/game")
+  const data = await fetch(
+    "https://next-js-13-2-dyanamic-routes-git-main-shrix1.vercel.app/api/game"
+  )
   return data.json()
 }
 
