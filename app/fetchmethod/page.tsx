@@ -1,5 +1,5 @@
 import React from "react"
-import Data from "../filter/Data"
+import Data from "./Data"
 
 const page = async () => {
   return (
