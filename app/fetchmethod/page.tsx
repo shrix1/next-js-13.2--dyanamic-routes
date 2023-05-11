@@ -1,5 +1,5 @@
 import React from "react"
-// import Data from "./Data"
+import Data from "./Data"
 
 const page = async () => {
   return (
@@ -7,7 +7,7 @@ const page = async () => {
       className="flex justify-center items-center w-full h-full
     flex-col m-auto"
     >
-      {/* <Data /> */}
+      <Data />
     </div>
   )
 }

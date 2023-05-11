@@ -1,34 +1,36 @@
-// import Link from "next/link"
-// import React from "react"
+import Link from "next/link"
+import React from "react"
 
-// interface gamesType {
-//   name: string
-//   rating: number
-//   catorgory: string
-// }
-// async function getGames() {
-//   const data = await fetch("http://localhost:3000/api/game")
-//   return data.json()
-// }
+interface gamesType {
+  name: string
+  rating: number
+  catorgory: string
+}
+async function getGames() {
+  const data = await fetch(
+    "https://next-js-13-2-dyanamic-routes.vercel.app/api/game"
+  )
+  return data.json()
+}
 
-// const Data: any = async () => {
-//   const games: gamesType[] = await getGames()
+const Data: any = async () => {
+  const games: gamesType[] = await getGames()
 
-//   return (
-//     <>
-//       {games.map((info, idx: number) => {
-//         return (
-//           <Link
-//             href={`/fetchmethod/${info.name}`}
-//             key={idx}
-//             className="border p-2 border-white/30 mb-1 rounded-md"
-//           >
-//             {info.name} | {info.rating} | {info.catorgory}
-//           </Link>
-//         )
-//       })}
-//     </>
-//   )
-// }
+  return (
+    <>
+      {games.map((info, idx: number) => {
+        return (
+          <Link
+            href={`/fetchmethod/${info.name}`}
+            key={idx}
+            className="border p-2 border-white/30 mb-1 rounded-md"
+          >
+            {info.name} | {info.rating} | {info.catorgory}
+          </Link>
+        )
+      })}
+    </>
+  )
+}
 
-// export default Data
+export default Data

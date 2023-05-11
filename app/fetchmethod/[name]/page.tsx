@@ -6,9 +6,11 @@ interface gamesType {
   catorgory: string
 }
 
-const page = async ({ params }: any) => {
+const Page = async ({ params }: any) => {
   async function getGames() {
-    const data = await fetch("http://localhost:3000/api/game")
+    const data = await fetch(
+      "https://next-js-13-2-dyanamic-routes.vercel.app/api/game"
+    )
     const res = await data.json()
     return res.filter((v: gamesType) => v.name === params.name)
   }
@@ -26,7 +28,7 @@ const page = async ({ params }: any) => {
   )
 }
 
-// export default page
+export default Page
 
 // export async function generateStaticParams() {
 //   async function getGames() {
