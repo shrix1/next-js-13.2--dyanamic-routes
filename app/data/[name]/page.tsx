@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: paramsType) {
   }
 }
 
-const dynamicRouteName = async ({ params }: paramsType) => {
+const DynamicRouteName = async ({ params }: paramsType) => {
   let filterName: any = data.filter((v) => v.name === params.name)
 
   return (
@@ -32,4 +32,4 @@ const dynamicRouteName = async ({ params }: paramsType) => {
   )
 }
 
-export default dynamicRouteName
+export default DynamicRouteName

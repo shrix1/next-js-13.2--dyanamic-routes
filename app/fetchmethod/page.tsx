@@ -1,15 +1,38 @@
 import React from "react"
-import Data from "./Data"
+import Link from "next/link"
 
-const page = async () => {
+interface gamesType {
+  name: string
+  rating: number
+  catorgory: string
+}
+
+const Page = async () => {
+  async function getGames() {
+    const data = await fetch(
+      "https://next-js-13-2-dyanamic-routes.vercel.app/api/game"
+    )
+    const res = await data.json()
+    return res
+  }
+
+  const games: gamesType[] = await getGames()
+
   return (
-    <div
-      className="flex justify-center items-center w-full h-full
-    flex-col m-auto"
-    >
-      <Data />
-    </div>
+    <>
+      {games.map((info, idx: number) => {
+        return (
+          <Link
+            href={`/fetchmethod/${info.name}`}
+            key={idx}
+            className="border p-2 border-white/30 mb-1 rounded-md"
+          >
+            {info.name} | {info.rating} | {info.catorgory}
+          </Link>
+        )
+      })}
+    </>
   )
 }
 
-export default page
+export default Page
