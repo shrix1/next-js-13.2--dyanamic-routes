@@ -26,18 +26,18 @@ const page = async ({ params }: any) => {
   )
 }
 
-export default page
+// export default page
 
-export async function generateStaticParams() {
-  async function getGames() {
-    const data = await fetch("http://localhost:3000/api/game")
-    const res = await data.json()
-    return res
-  }
+// export async function generateStaticParams() {
+//   async function getGames() {
+//     const data = await fetch("http://localhost:3000/api/game")
+//     const res = await data.json()
+//     return res
+//   }
 
-  const data = await getGames()
+//   const data = await getGames()
 
-  return data.map((v: gamesType) => ({
-    name: v.name,
-  }))
-}
+//   return data.map((v: gamesType) => ({
+//     name: v.name,
+//   }))
+// }
